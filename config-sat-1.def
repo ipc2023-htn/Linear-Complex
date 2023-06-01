@@ -67,7 +67,7 @@ From: ubuntu:22.04
 ## Update the following fields with meta data about your submission.
 ## Please use the same field names and use only one line for each value.
 %labels
-Name        grounded-linear-agile
+Name        grounded-linear-satisficing
 Description 
 Authors     Ying Xian Wu <yingxian.wu@anu.edu.au> and Conny Olz <conny.olz@uni-ulm.de> and Songtuan Lin <songtuan.lin@anu.edu.au> and Pascal Bercher <pascal.bercher@anu.edu.au>
 SupportsRecursion yes
@@ -75,4 +75,9 @@ SupportsTotalOrder no
 SupportsPartialOrder yes
 SupportsAgilePlanning yes
 SupportsOptimalPlanning no
-
+Track-TO-agile no
+Track-TO-satisficing no
+Track-TO-optimal no
+Track-PO-agile no
+Track-PO-satisficing yes
+Track-PO-optimal no
