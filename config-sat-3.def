@@ -60,12 +60,13 @@ From: ubuntu:22.04
 	PLANFILE=$3
 
 	## run your planner here
+	START=$(date +%s)
 	/pandaPIparser/pandaPIparser ${DOMAINFILE} ${PROBLEMFILE} task.htn
 	/pandaPIgrounder/pandaPIgrounder task.htn task.sas
-	/planner/build/pandaPIengine --config 6 -t 1780 --output ${PLANFILE}.1 task.sas 
-	sed -i 's/US_/_/g' ${PLANFILE}.1
-	sed -i 's/M_/-/g' ${PLANFILE}.1
-	sed -i 's/MINUS_/-/g' ${PLANFILE}.1
+	END=$(date +%s)
+	DIFF=$((END - START))
+	LIMIT=$((1770 - DIFF))
+	/planner/build/pandaPIengine --config 6 -t ${LIMIT} --output ${PLANFILE}.1 task.sas 
 	/pandaPIparser/pandaPIparser -c ${PLANFILE}.1 $PLANFILE 
 
 ## Update the following fields with meta data about your submission.
